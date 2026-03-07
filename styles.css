@@ -34,5 +34,90 @@ body {
 .calculator{
     background: linear-gradient(180deg, #0f1b33, var(--panel));
     border: 1px solid rgba(255,255,255,0.08);
-    
+    border-radius:16px;
+    padding:16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35)
+}
+
+.display{
+    background: var(--display);
+    border-radius:12px;
+    padding: 14px 14px;
+    min-height:78px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:6px;
+    margin-bottom: 14px;
+    border:1px solid (rgba(255,255,255,0.08))
+}
+
+.display-top{
+    font-size:0.95rem;
+    color:var(--muted);
+    text-align:right;
+    min-height:18px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.display-bottom{
+    font-size:2rem;
+    font-weight: 700;
+    text-align:right;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+
+.keys{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px
+}
+
+.key {
+    background: linear-gradient(180deg, var(--key2,) var(--key));
+    border:1px solid rgba(255,255,255,0.08);
+    color: var(--text);
+    border-radius: 12px;
+    padding:14px 0;
+    font-size: 1.15rem;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.04s ease, filter 0.12s ease;
+}
+
+.key:active{
+    transform:translateY(1px);
+    filter: brightness(1.1)
+}
+
+.key-op{
+    background: linear-gradient(180deg, #2c5aa0, var(--op));
+}
+
+.key-fn[data-action="all-clear"]{
+    background: linear-gradient(180deg, #ff6b6b, var(--danger));
+}
+
+.key-fn{
+    background: linear-gradient(180deg, #334568, #2a3a5a)
+}
+
+.key-eq{
+    grid-row: span 2;
+    background: linear-gradient(180deg, #2ee07a, var(--eq));
+    font-weight: 800
+}
+
+.key-zero{
+    grid-column: span 2;
+}
+
+.hint{
+    margin:12px 2px 0 2px;
+    font-size:0.9rem;
+    color:var(--muted);
 }
